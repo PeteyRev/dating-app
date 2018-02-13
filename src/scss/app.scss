@@ -1,18 +1,40 @@
-body{
+body {
   font-family: 'Roboto', sans-serif;
+  margin: 0;
 }
 
+#app {}
 
-#app{
-  @include grid-col-row(2rem)
-
-}
-
-header{
-
-  nav{
+header {
+  background: gray;
+  padding: 1rem;
+  nav {
     background: #ffffff;
-    position: fixed;
+    position: absolute;
+    padding: 1rem 0rem;
+    left: -1000px;
+    top: 3.4rem;
+    text-align: left;
+    width: 13rem;
+    transition:.4s ease-in-out;
+    &.open{
+      left:0;
+    }
+    ul{
+      margin: 0;
+      padding:0;
+      list-style-type: none;
+      li{
+        border-bottom: 1px solid gray;
+        &:last-child{
+          border-bottom: none;
+        }
+        a{
+          display: block;
+          padding: 1rem;
+        }
+      }
+    }
   }
-
 }
+

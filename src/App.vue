@@ -1,11 +1,12 @@
+/* eslint-disable */
 <template>
   <div id="app">
     <header>
-      <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
+      <button @click="toggleMenu" ref="mobilemenu" class="mobile-toggle"><i class="fas fa-bars"></i></button>
       <nav>
         <ul class="main-nav">
           <li>
-            <router-link to="/" class="button"
+            <router-link to="/HelloWorld" class="button"
             active-class="active">link 1</router-link>
           </li>
           <li>
@@ -19,18 +20,24 @@
         </ul>
         </nav>
     </header>
-    <img src="./assets/logo.png">
+    <img src="./assets/harr.jpg">
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    toggleMenu () {
+      let menu = this.$refs.mobilemenu.nextElementSibling
+      menu.classList.toggle('open')
+    }
+  }
 }
 </script>
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500i,700');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500i,700");
 @import "~foundation-sites/scss/foundation";
 @import "/scss/app";
 </style>
