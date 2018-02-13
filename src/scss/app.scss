@@ -1,0 +1,18 @@
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+#app{
+  @include grid-col-row(2rem)
+
+}
+
+header{
+
+  nav{
+    background: #ffffff;
+    position: fixed;
+  }
+
+}
